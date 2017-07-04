@@ -8,7 +8,7 @@ public class Folders {
 		String[] lines = xml.replaceAll("'", "\"").split("<");
 		for(String line : lines){
 			if(line.toLowerCase().contains("folder") && line.toLowerCase().contains("name")){
-				name = line.substring(xml.indexOf("=\""), line.lastIndexOf("\""));
+				name = line.substring(line.indexOf("=\""), line.lastIndexOf("\""));
 				if(name.length() != 0 && (name.toLowerCase().charAt(0) == Character.toLowerCase(startingLetter))){
 					names.add(name);
 				}
